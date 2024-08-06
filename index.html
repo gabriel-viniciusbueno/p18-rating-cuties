@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rank de Animais Domésticos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/script.js" defer></script>
+</head>
+<body>
+  <div class="main-opacity hide"></div>
+  
+  <div class="error-container hide">
+    <i id="x-icon" class="fa-solid fa-x"></i>
+    <h3>Please, chose your rate!</h3>
+  </div>
+  <main>
+    <section class="main-container ">
+      
+      <!-- first screen -->
+      <h1 id="title">Rate these cuties</h1>
+      <div class="rate-card">
+        <div class="img-container ">
+          <img src="./assets/animal1.jpg" alt="">
+        </div>
+        <div class="btn-container">
+            <input class="button non-selected" type="button" value="1">
+            <input class="button non-selected" type="button" value="2">
+            <input class="button non-selected" type="button" value="3">
+            <input class="button non-selected" type="button" value="4">
+            <input class="button non-selected" type="button" value="5">
+        </div>
+      </div>
+
+      <div class="arrow-container">
+        <a class="button" id="prev-arrow" href="#">
+          <i id="prev-arrow-ico" class="fa-solid fa-arrow-left icon hide"></i>
+        </a>
+        <a class="button " id="next-arrow" href="#">
+          <i class="fa-solid fa-arrow-right icon"></i>
+        </a>
+        <a class="finish hide" href="#">Finish</a>
+      </div>
+    </section>
+
+    <!-- second screen -->
+    <section class="result-card hide">
+      <h1>Your result</h1>
+      <h2><span></span></h2>
+      <div class="result-description">
+
+        <!-- Ratings modal -->
+        <div class="rate1 hide">
+          <div class="img-container img-1">
+            <img src="assets/rate1.png" alt="">
+          </div>
+          <p>Are you a human being?</p>
+        </div>
+
+        <div class="rate2 hide">
+          <div class="img-container img-2">
+            <img src="./assets/rate2.jpg" alt="">
+          </div>
+          <p>Avarage normal person's love for animals!</p>
+        </div>
+        
+        <div class="rate3 hide">
+          <div class="img-container img-3">
+            <img src="./assets/rate3.jpg" alt="">
+          </div>
+          <p>You're the legendary animal lover and there's no limits for you!</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  
+</body>
+</html>
