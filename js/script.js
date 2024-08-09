@@ -1,31 +1,24 @@
 // import module;
+import { toggleErrorModal } from './alert-error.js';
+import { resetButton, changePicture } from './utils.js'
+import { togglePrevArrow, toggleFinishBtn } from './arrows.js';
+
 const buttons = document.querySelectorAll('.btn-container .button');
 const arrowPrev = document.getElementById('prev-arrow');
 const arrowNext = document.getElementById('next-arrow');
 const errorModalBtn = document.getElementById('x-icon');
 const finishBtn = document.querySelector('.finish');
-let pictureId = 1;
+
+let pictureId = 13;
 let rate = 0
 let ratesArr = [];
 
-function verification () {
-  buttons.forEach((btn) => {
-    btn.classList.remove('selected');
-    btn.classList.add('non-selected');
-}
-)}
 
-function changePicture() {
-  if(pictureId <= 15){
-    const picture = document.querySelector('.img-container img');
-    picture.src = `./assets/animal${pictureId}.jpg`;
-  }
-}
 
-function checkRate(rate){
+function checkNaN(rate){
   if(rate != 0) {
     pictureId++
-    changePicture()
+    changePicture(pictureId)
     ratesArr.push(rate);
   }else {
     toggleErrorModal()
@@ -33,47 +26,11 @@ function checkRate(rate){
   }
 }
 
-function toggleErrorModal(){
-  console.log("chamou")
-  const opacity = document.querySelector('.main-opacity');
-  const errorModal = document.querySelector('.error-container');
 
-  opacity.classList.toggle('hide');
-  errorModal.classList.toggle('hide');
-}
-
-function resetButton(){
-  buttons.forEach((btn) => {
-    btn.classList.remove('selected');
-    btn.classList.add('non-selected');
-  })
-}
-
-function togglePrevArrow() {
-  if(pictureId >= 2){
-    const arrowIco = document.getElementById('prev-arrow-ico');
-    arrowIco.classList.remove('hide')
-  } else {
-    const arrowIco = document.getElementById('prev-arrow-ico');
-    arrowIco.classList.add('hide')
-  }
-}
-
-function toggleFinishBtn() {
-  if(pictureId >= 15){
-    arrowNext.classList.toggle('hide');
-    finishBtn.classList.toggle('hide');
-  }
-}
-
-function finalResult(){
-
-}
-
-
+// evento dos botoes de rate
 buttons.forEach((btn) => btn.addEventListener('click', () => {
 
-  verification();
+  resetButton();
   rate = parseInt(btn.value);
   btn.classList.toggle('non-selected');
   btn.classList.toggle('selected');
@@ -81,23 +38,24 @@ buttons.forEach((btn) => btn.addEventListener('click', () => {
 })
 )
 
+//evento da next arrow
 arrowNext.addEventListener('click', () => {
-  checkRate(rate)
+  checkNaN(rate)
 
-  togglePrevArrow()
+  togglePrevArrow(pictureId)
   resetButton()
 
   rate = 0;
-  toggleFinishBtn()
+  toggleFinishBtn(pictureId)
   console.log(ratesArr)
   console.log(pictureId)
 })
 
 arrowPrev.addEventListener('click', () => {
-  verification()
+  resetButton()
   pictureId--
-  togglePrevArrow()
-  changePicture()
+  togglePrevArrow(pictureId)
+  changePicture(pictureId)
 
   ratesArr.pop()
   console.log(ratesArr)
@@ -107,7 +65,7 @@ arrowPrev.addEventListener('click', () => {
 errorModalBtn.addEventListener('click', toggleErrorModal)
 
 finishBtn.addEventListener('click', () => {
-  checkRate(rate);
+  checkNaN(rate);
   console.log(ratesArr);
 
   const resultScreen = document.querySelector('.result-card');
@@ -118,9 +76,6 @@ finishBtn.addEventListener('click', () => {
     resultScreen.classList.remove('hide');
   }
 
-  // for(let i = 0; i < ratesArr.length; i++){
-  //   finalRate += ratesArr[i];
-  // }
   let finalRate = ratesArr.reduce((value, rate) => {
     return value + rate;
   }, 0)
@@ -132,7 +87,10 @@ finishBtn.addEventListener('click', () => {
   const resultSpan = document.querySelector('.result-card h2 span');
   resultSpan.innerHTML = finalRate.toFixed(1)
 
-
+  // TOGGLE FINISH BUTTON
+  if(pictureId >= 15){
+    toggleFinishBtn()
+  }
 
  // Refatorar
   if(finalRate <= 3){
@@ -145,15 +103,8 @@ finishBtn.addEventListener('click', () => {
     const resultModal = document.querySelector('.rate3');
     resultModal.classList.toggle('hide')
   }
-
-
-
-
-  //com o valor final da nota, mostrar a foto e a pontuação do usuario
-  //talvez definir o resultado com switch case 
-
-  //mostrar no texto quanto foi a nota em cada caso
 })
 
+// fazer um botão de restart no app
 
 // aplicar modules

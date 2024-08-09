@@ -24,6 +24,7 @@ body{
   font-family: 'Zain';
 
   height: 100%;
+  background-color: var(--background);
 }
 
 main{
@@ -34,7 +35,7 @@ main{
   align-items: center;
   flex-direction: column;
 
-  background-color: var(--background);
+  /* background-color: var(--background); */
 }
 
 .error-container{
