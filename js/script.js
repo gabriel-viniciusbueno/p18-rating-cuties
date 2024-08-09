@@ -13,8 +13,6 @@ let pictureId = 13;
 let rate = 0
 let ratesArr = [];
 
-
-
 function checkNaN(rate){
   if(rate != 0) {
     pictureId++
@@ -59,7 +57,6 @@ arrowPrev.addEventListener('click', () => {
 
   ratesArr.pop()
   console.log(ratesArr)
-
 })
 
 errorModalBtn.addEventListener('click', toggleErrorModal)
@@ -82,15 +79,8 @@ finishBtn.addEventListener('click', () => {
 
   finalRate *= 2 / ratesArr.length;
 
-  
-
   const resultSpan = document.querySelector('.result-card h2 span');
   resultSpan.innerHTML = finalRate.toFixed(1)
-
-  // TOGGLE FINISH BUTTON
-  if(pictureId >= 15){
-    toggleFinishBtn()
-  }
 
  // Refatorar
   if(finalRate <= 3){
@@ -106,5 +96,3 @@ finishBtn.addEventListener('click', () => {
 })
 
 // fazer um botão de restart no app
-
-// aplicar modules
