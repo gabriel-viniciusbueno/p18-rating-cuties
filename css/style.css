@@ -65,24 +65,22 @@ main{
 }
 
 #x-icon::before{
-  background-color: red;
-  padding: 25px;
+  background-color: var(--background);
+  border-radius: 50%;
+  padding: 20px;
 }
 #x-icon{
-  font-size: 2rem;
+  font-size: 1.7rem;
   position: absolute;
-  left: 95%;
+  left: 97%;
   top: 10%;
   transform: translate(-50%, -50%);
-  color: var(--background);
 
+  color: var(--warm-brown);
   transition: .3s;
   cursor: pointer;
 }
-#x-icon:hover{
-  color: rgb(159, 4, 4);
-  scale: 1.1;
-}
+
 
 .main-container{
   max-width: 400px;
