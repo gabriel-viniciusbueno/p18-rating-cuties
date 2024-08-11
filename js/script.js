@@ -63,7 +63,6 @@ errorModalBtn.addEventListener('click', toggleErrorModal)
 
 finishBtn.addEventListener('click', () => {
   checkNaN(rate);
-  console.log(ratesArr);
 
   const resultScreen = document.querySelector('.result-card');
   const mainContainer = document.querySelector('.main-container')
@@ -79,9 +78,9 @@ finishBtn.addEventListener('click', () => {
 
   finalRate *= 2 / ratesArr.length;
 
-  const resultSpan = document.querySelector('.result-card h2 span');
+  const resultSpan = document.querySelector('.result-card h2 p');
   resultSpan.innerHTML = finalRate.toFixed(1)
-
+  console.log(finalRate)
  // Refatorar
   if(finalRate <= 3){
     const resultModal = document.querySelector('.rate1');
