@@ -22,7 +22,6 @@ html{
 
 body{
   font-family: 'Zain';
-
   height: 100%;
   background-color: var(--background);
 }
@@ -34,8 +33,6 @@ main{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  /* background-color: var(--background); */
 }
 
 .error-container{
@@ -81,7 +78,6 @@ main{
   cursor: pointer;
 }
 
-
 .main-container{
   max-width: 400px;
   background-color: var(--card);
@@ -100,7 +96,6 @@ main{
   border-radius: 0 25px 0 25px;
   box-shadow: 0 0 15px #00000069;
 
-  /* z-index: 1; */
 }
 
 .main-container #title{
@@ -208,7 +203,6 @@ main{
   align-items: center;
   justify-content: center;
   max-width: 550px;
-  /* height: 400px; */
   padding: 20px;
 
   background-color: var(--card);
@@ -220,7 +214,6 @@ main{
 
 .result-card > h1{
   font-size: 5rem;
-    /* color: var(--warm-brown); */
 }
 
 .result-description{
@@ -229,28 +222,18 @@ main{
   text-align: center;
   align-items: center;
   justify-content: center;
-
 }
 
 .result-card > h2:nth-child(2){
   font-size: 8rem;
-  /* background-color: var(--background); */
-  /* color: var(--warm-brown); */
 
   margin: 0;
   padding: 0;
 }
-
-/* .rate1 > .img-container{
-  display: block;
-  width: 400px;
-} */
-
 .rate1 > p,
 .rate2 > p,
 .rate3 > p {
   font-size: 3.5rem;
-  /* display: block; */
 }
 
 .rate1,
@@ -273,7 +256,6 @@ main{
 .img-3{
   width: 450px;
 }
-
 
 .main-opacity{
   width: 100%;
@@ -313,3 +295,5 @@ main{
   display: none;
   visibility: hidden;
 }
+
+/* media screen
