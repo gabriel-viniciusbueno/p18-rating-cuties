@@ -37,7 +37,7 @@ main{
 
 .error-container{
   position: absolute;
-  width: 35%;
+  width: 15%;
   height: 25%;
   background-color: var(--card);
 
@@ -46,7 +46,7 @@ main{
   transform: translate(-50%, -50%);
   z-index: 2;
 
-  font-size: 4rem;
+  font-size: 5rem;
   text-align: center;
   color: var(--background);
 
@@ -58,7 +58,6 @@ main{
   padding: 10px;
 
   overflow: hidden;
-
 }
 
 #x-icon::before{
@@ -68,14 +67,18 @@ main{
 }
 #x-icon{
   font-size: 1.7rem;
-  position: absolute;
-  left: 97%;
+  position: fixed;
+  left: 95%;
   top: 10%;
   transform: translate(-50%, -50%);
 
-  color: var(--warm-brown);
+  color: var(--text);
   transition: .3s;
   cursor: pointer;
+}
+
+#x-icon:hover{
+  color: var(--warm-brown);
 }
 
 .main-container{
@@ -296,4 +299,22 @@ main{
   visibility: hidden;
 }
 
-/* media screen
+@media (max-width: 900px){
+  .error-container{
+    font-size: 5rem;
+    width: 35%;
+    height: 25%;
+  }
+}
+
+@media (max-width: 500px){
+  .error-container{
+    font-size: 4rem;
+  }
+
+  #x-icon{
+    font-size: 2rem;
+    left: 90%;
+  }
+  
+}

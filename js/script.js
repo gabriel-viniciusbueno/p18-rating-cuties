@@ -9,7 +9,7 @@ const arrowNext = document.getElementById('next-arrow');
 const errorModalBtn = document.getElementById('x-icon');
 const finishBtn = document.querySelector('.finish');
 
-let pictureId = 13;
+let pictureId = 1;
 let rate = 0
 let ratesArr = [];
 
@@ -24,19 +24,14 @@ function checkNaN(rate){
   }
 }
 
-
-// evento dos botoes de rate
 buttons.forEach((btn) => btn.addEventListener('click', () => {
-
   resetButton();
   rate = parseInt(btn.value);
   btn.classList.toggle('non-selected');
   btn.classList.toggle('selected');
-  console.log(rate)
 })
 )
 
-//evento da next arrow
 arrowNext.addEventListener('click', () => {
   checkNaN(rate)
 
