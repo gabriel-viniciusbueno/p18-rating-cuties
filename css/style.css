@@ -23,6 +23,7 @@ html{
 body{
   font-family: 'Zain';
   height: 100%;
+  width: 100%;
   background-color: var(--background);
 }
 
@@ -308,13 +309,53 @@ main{
 }
 
 @media (max-width: 500px){
+  .main-container{
+    max-width: 250px;
+    padding: 10px 10px;
+    gap: 20px;
+  }
+  
+  .main-container #title{
+    font-size: 3.5rem;
+  }
+  
+  .rate-card{
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .img-container{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  .btn-container{
+    gap: 5px;
+  }
+  
+  .btn-container input{
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 2rem;
+  }
+
   .error-container{
+    width: 200px;
+    height: 150px;
     font-size: 4rem;
+    padding: 5px;
   }
 
   #x-icon{
-    font-size: 2rem;
+    font-size: 1.5rem;
     left: 90%;
   }
+
+  #x-icon::before{
+    padding: 15px;
+  }
+
+
   
 }
